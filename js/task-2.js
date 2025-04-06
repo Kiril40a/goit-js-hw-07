@@ -26,7 +26,7 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
-
+let liElements = [];
 
 images.forEach(elem => {
   let li = document.createElement("li");
@@ -36,5 +36,7 @@ images.forEach(elem => {
   img.src = elem.url;
   img.alt = elem.alt;
   li.append(img);
-  gallery.append(li)
+  liElements.push(li)
 });
+
+gallery.append(...liElements)
